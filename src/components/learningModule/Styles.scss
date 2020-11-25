@@ -5,6 +5,9 @@
 .learningModule {
     &__header {
         text-align: center;
+        @media only screen and (max-width: $mobile) {
+            display: none;
+        }
     }
 
     &__title {
@@ -26,8 +29,21 @@
         border-radius: 10px;
         display: grid;
         justify-content: center;
+
         @media only screen and (max-width: $tablet) {
+            height: auto;
+            width: auto;
             border-radius: unset;
+            box-shadow: 0px 0px 20px -15px;
+            padding: 0px 0px 20px 0;
+            border-radius: 10px;
+            display: grid;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: $mobile) {
+            box-shadow: none;
+
         }
 
     }
@@ -37,12 +53,35 @@
         display: grid;
         grid-auto-flow: column;
         grid-gap: 10px;
+
+        @media only screen and (max-width: $tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: left;
+        }
     }
 
     &__submitButtonContainer {
         height: 50px;
         .submitButton {
             float: right;
+        }
+
+        @media only screen and (max-width: $tablet) {
+            position: relative;
+            
+
+            .submitButton {
+                margin: 0;
+                position: absolute;
+                
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                border-radius: 10px;
+            }
         }
     }
 }
